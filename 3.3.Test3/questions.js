@@ -82,32 +82,61 @@ let makeNegative = (number) => {
 }
 
 let numberOfPalindromes = (array) => {
-    /*console.log(array);
+    
     let str = array.join(',');
-    console.log(str);
     let newStr = ""; 
     for(let i=str.length - 1; i >=0; i--){
         newStr += str[i]
     }
-    console.log(newStr.split(',').reverse());*/
+    let reversed = newStr.split(',').reverse();
+    let palindromes = [];
     
+    for(let i=0;i<array.length;i++){
+        for(let j=0;j<reversed.length;j++){
+            if(array[i] === reversed[j]){
+                palindromes.push(array[i]);
+            }
+        }
+    }
+    return palindromes.length;
     
 }
 
 let shortestWord = (array) => {
-    return 'Write your method here';
+    
+    let shortestWord = '';
+    let length = [];
+    
+    for(let i=0;i<array.length;i++){
+         length.push(array[i].length);
+         if(array[i].length === Math.min(...length)){
+            shortestWord = array[i];
+        }
+    }
+    
+    return shortestWord;
 }
 
 let longestWord = (array) => {
-    return 'Write your method here';
+    let longestWord = '';
+    let length = [];
+
+    for(let i=0; i<array.length; i++){
+        length.push(array[i].length);
+        if(array[i].length === Math.max(...length)){
+            longestWord = array[i];
+        }
+    }
+
+    return longestWord;
 }
 
 let sumNumbers = (array) => {
-    return 'Write your method here';
+    return array.reduce((a, b) => a + b, 0);
 }
 
 let repeatElements = (array) => {
-    return 'Write your method here';
+    
 }
 
 let stringToNumber = (string) => {
