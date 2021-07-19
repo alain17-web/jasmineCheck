@@ -45,31 +45,53 @@ let reverseWordsInArray = (array) => {
 }
 
 let everyPossiblePair = (array) => {
-    return 'Write your method here';
+    let pairs = [];
+    for(let i=array.length -1;i>=0;i--){
+        for(let j=0;j<array.length-1;j++){
+            if(i != j && i !=1){
+                pairs.push([array[i],array[j]]);
+            }
+        }
+        
+    }
+    return pairs;
+    
+    
 }
 
 let allElementsExceptFirstThree = (array) => {
-    return 'Write your method here';
+    return array.slice(3);
 }
 
 let addElementToBeginning = (array, element) => {
-    return 'Write your method here';
+    array.unshift(1);
+    return array;
 }
 
 let sortByLastLetter = (array) => {
-    return 'Write your method here';
+     array.sort((a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1));
+     return array;
 }
 
 let getFirstHalf = (string) => {
-    return 'Write your method here';
+    return string.substring(0,Math.round(string.length / 2));
 }
 
 let makeNegative = (number) => {
-    return 'Write your method here';
+    return -Math.abs(number);
 }
 
 let numberOfPalindromes = (array) => {
-    return 'Write your method here';
+    /*console.log(array);
+    let str = array.join(',');
+    console.log(str);
+    let newStr = ""; 
+    for(let i=str.length - 1; i >=0; i--){
+        newStr += str[i]
+    }
+    console.log(newStr.split(',').reverse());*/
+    
+    
 }
 
 let shortestWord = (array) => {
