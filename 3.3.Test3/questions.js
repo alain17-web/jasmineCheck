@@ -233,41 +233,62 @@ let getDomainName = (string) => {
 }
 
 let titleize = (string) => {
-    console.log(string);
-    let maj = [];
+    
     let arr = string.split(' ');
+    
     for(let i=0;i<arr.length; i++){
-        if(arr[i].length > 3){
-            maj.push((arr[i]));
+        if(arr[i].length == 6){
+            
+           arr[i+1] = arr[i+1].charAt(0).toUpperCase() + arr[i+1].substring(1);
         }
+        if(arr.indexOf(arr[i]) == 0 || arr[i].length > 3 ){
+            arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substring(1); 
+        }
+        
     }
-    console.log(maj);
-    for(let j=0;j<maj.length;j++){
-        maj[0].toUpperCase();
-    }
-    console.log(maj);
+    let str = arr.join(' ');
+    
+   return str;
+    
 }
 
 let checkForSpecialCharacters = (string) => {
-    return 'Write your method here';
+    var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+    if(format.test(string)){
+        return true;
+    } else {
+        return false;
+    }
 }
 
 let squareRoot = (number) => {
-    return 'Write your method here';
+    return Math.sqrt(number);
 }
 
 let factorial = (number) => {
-    return 'Write your method here';
+    let answer = 1;
+    if (number == 0 || number == 1){
+        return answer;
+    }else{
+        for(var i = number; i >= 1; i--){
+         answer = answer * i;
+        }
+    return answer;
+  }  
 }
 
 let findAnagrams = (string) => {
-    return 'Write your method here';
+    //console.log(string);
+    
 }
 
 let convertToCelsius = (number) => {
-    return 'Write your method here';
+    const fahrenheitToCelsius = fahrenheit => Math.round((fahrenheit - 32) * 5/9);
+    return fahrenheitToCelsius(number);
 }
 
 let letterPosition = (array) => {
-    return 'Write your method here';
+    
+
 }
