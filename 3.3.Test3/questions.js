@@ -253,7 +253,7 @@ let titleize = (string) => {
 }
 
 let checkForSpecialCharacters = (string) => {
-    var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+    let format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
 
     if(format.test(string)){
         return true;
@@ -279,8 +279,24 @@ let factorial = (number) => {
 }
 
 let findAnagrams = (string) => {
-    //console.log(string);
-    
+    function allAnagrams (word) {
+        if (word.length < 2) {
+          return [word];
+        } else {
+           let allAnswers = [];
+            for (let i = 0; i < word.length; i++) {
+              let letter = word[i];
+              let shorterWord = word.substr(0, i) + word.substr(i + 1, word.length - 1);
+              let shortwordArray = allAnagrams(shorterWord);
+              for (let j = 0; j < shortwordArray.length; j++) {
+                allAnswers.push(letter + shortwordArray[j]);
+              }
+            }
+            return allAnswers;
+        }
+      }
+      
+      return allAnagrams(string);
 }
 
 let convertToCelsius = (number) => {
@@ -290,5 +306,21 @@ let convertToCelsius = (number) => {
 
 let letterPosition = (array) => {
     
+    let alphabet = "abcdefghijklmnopqrstuvwxyz";
+    
+    let arr = alphabet.split('');
+    let positions = [];
+    
+
+    for(let j = 0; j<array.length;j++){
+        array[j] = array[j].toLowerCase();
+
+        for(let i=0;i<arr.length;i++){
+            if(array[j] === arr[i]){
+                positions.push(i+1);
+            }
+        }
+    }
+    return positions;
 
 }
