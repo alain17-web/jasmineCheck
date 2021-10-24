@@ -1,2 +1,2 @@
 # jasmineCheck
-introduction to behavior-driven Javascript Jasmine
+introduction to Javascript with behavior-driven tests Jasmine
